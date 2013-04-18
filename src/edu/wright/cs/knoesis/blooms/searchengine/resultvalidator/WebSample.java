@@ -20,8 +20,8 @@ import com.google.gson.Gson;
 public class WebSample
 {
 	
-	  String AppId = "Insert your Bing Search App ID here";
-	  String searchParams = ""; 
+	 String AppId = "Insert your Bing Search App ID here";
+	 String searchParams = ""; 
 	  
 	  
     public WebSample(String searchParams)
@@ -55,7 +55,6 @@ public class WebSample
         HttpURLConnection conn=(HttpURLConnection)url.openConnection();
         conn.setRequestMethod("GET");
         conn.setRequestProperty("Authorization", "Basic " + accountKeyEnc);
-        System.out.println(conn.getResponseCode());
         
         
         BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -65,7 +64,6 @@ public class WebSample
         	sb.append(inputLine);
         }
         in.close();
-        System.out.println( sb.toString());
   
         Container myD = new Gson().fromJson(sb.toString(), Container.class);
         ResponseResults results=myD.d;
@@ -77,7 +75,6 @@ public class WebSample
         
         for(int i=0;i<webResults.size();i++){
         	searchResults.addSearchResult(webResults.get(i));
-        	System.out.println(webResults.get(i).toString());
         }
         
         return searchResults;

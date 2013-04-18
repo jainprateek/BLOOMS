@@ -108,7 +108,7 @@ public class BloomsMatcher
             tHold = Double.parseDouble(args[4]);
             if(args[2].equalsIgnoreCase("wordnet"))
             {
-                WordnetBLOOMS wnBlooms = new WordnetBLOOMS(outputFile);
+                WordnetBLOOMS wnBlooms = new WordnetBLOOMS(args[3]);
                 wnBlooms.match(onto1, onto2, Double.valueOf(tHold));
             } else
             if(args[2].equalsIgnoreCase("wikipedia"))

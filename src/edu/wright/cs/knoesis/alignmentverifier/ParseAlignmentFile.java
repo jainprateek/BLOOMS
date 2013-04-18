@@ -316,7 +316,6 @@ public class ParseAlignmentFile
 
     int verifyRelationship(String searchPattern)
     {
-    	System.out.println(searchPattern);
         int counter = 0;
         WebSample bingSearch = new WebSample(searchPattern);
         try

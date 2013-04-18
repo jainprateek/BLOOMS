@@ -1,0 +1,36 @@
+1. First and foremost, you should know Java, basics of Semantic Web, Jena Java API, Alignment API, Wordnet Java API and JSON. If you don't know any of this stuff try learning from these excellent sources
+
+Semantic Web :- www.semantic-web-book.org/
+Jena Java API :- http://jena.apache.org/
+Wordnet Java API :- http://projects.csail.mit.edu/jwi/
+Alignment API :- http://alignapi.gforge.inria.fr/
+
+
+2. Use a Java development platform like Eclipse or Netbeans and import the files and the add the libraries in the lib folder.
+
+3. Install Wordnet by downloading it from http://wordnet.princeton.edu/
+
+4. Open the file environment.txt and replace the installation location of Wordnet with the location on your computer. I have a Windows based machine and as of now I can confirm it works fine on Windows 7. I cannot confirm or deny if it works on other platforms. If you check it on other platforms like Linux and MacOS and it does not work, make an entry on the Issue tracker or fix it and let me know.
+
+5. Configure the Wordnet Java API to use the Wordnet installation location
+
+6. BLOOMS internally uses Web search results from Bing to validate/correct the identified relationships using Bing Websearch API. To use it, you have to signup for it at http://datamarket.azure.com/ and then go to https://datamarket.azure.com/dataset/bing/search and generate an API key for your use. After you get the API key, open the file edu.wright.cs.knoesis.blooms.searchengine.resultvalidator.WebSample 
+
+Here you will see the line: 
+			 String AppId = "Your Bing Search App ID here";
+
+
+Replace "Your Bing Search App ID here" with your key.
+
+7. Now head to edu.wright.cs.knoesis.blooms.BloomsMatcher and run the main method with 5 arguments
+
+<Source Ontology> <Target Ontology> <Source for Alignment specify as wikipedia> <outputfile> <threshold>
+
+Source and Target Ontology should be URIs (preferrably HTTP URIs). 
+Output file is just the name of the file where you want the results to be serialized in Alignment API format.
+threshold is a value between 0 to 1, for confidence. This measure is used only to filter out results computed using Wikipedia. Eventually the results are verified using Step 6 and the results will have confidence 1.
+
+8. After you execute it, depending on the size of the ontologies the system will fetch the information and will try to compute the results. Occasionally it might throw an error showing XML bytes issue, but it is nothing to worry about, it will not affect the program in any way. When the program halts, it should provide the alignment in the file specified as outputfile in Step 7. 
+
+9. If there is any problem, put it in the "Issues" on GitHub and send me an email at jainprateek at gmail dot com
+I will try my best to respond, but please realize I have a full time job and I am doing this for my personal intellectual curiosity. 
