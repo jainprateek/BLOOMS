@@ -43,8 +43,20 @@ If my occasional ramblings and musings and actions related to it considered acti
 
 What is the license
 =======
-Feel free to use it for any research and non-commercial purpose. Make sure to cite the work. Why? Because it is the right thing to do. Remember, Karma..
-If you want to use it commercially, contact me! jainprateek at gmail dot com
+
+Copyright 2013 Wright State University, Dayton OH USA (WSU)
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
 
 What about the dependencies? Do you own them?
 =======
